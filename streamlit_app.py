@@ -4,7 +4,7 @@ import google.generativeai as genai
 st.title("💬 Chatbot")
 
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-model = genai.GenerativeModel("gemini-2.0-flash")
+model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
