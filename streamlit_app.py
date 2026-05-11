@@ -4,7 +4,7 @@ import google.generativeai as genai
 st.title("💬 Chatbot")
 
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-2.0-flash")
 
 if "messages" not in st.session_state:
 	st.session_state.messages = []
@@ -27,3 +27,4 @@ if prompt := st.chat_input("請輸入訊息..."):
 			st.write(reply)
 	except Exception as e:
 		st.error(f"Error generating response: {e}")
+sed -i 's/gemini-2.0-flash/gemini-2.0-flash/g' streamlit_app.py && git add . && git commit -m "update model" && git push
